@@ -1,0 +1,37 @@
+{
+  "name": "node-rabbitmq-api",
+  "version": "1.0.0",
+  "description": "A simple API with RabbitMq client",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "nodemon index.js",
+    "lint": "eslint . --ext .js",
+    "lint-fix": "eslint . --ext .js --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint",
+      "git add"
+    ]
+  },
+  "keywords": [],
+  "author": "Thiago de Moraes",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "moment-timezone": "^0.5.27"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.4.3"
+  }
+}
